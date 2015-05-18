@@ -1,0 +1,55 @@
+<html>
+	<head>
+		<script src="http://code.jquery.com/jquery-2.1.0.js"></script>
+		<script src="http://172.16.252.141:8080/jasperserver-pro601/client/visualize.js?_opt=false"></script>
+	<script>
+			var qs = (function(a) {
+		if (a == "") return {};
+		var b = {};
+		for (var i = 0; i < a.length; ++i)
+		{
+			var p=a[i].split('=', 2);
+			if (p.length == 1)
+				b[p[0]] = "";
+			else
+				b[p[0]] = decodeURIComponent(p[1].replace(/\+/g, " "));
+		}
+		return b;
+		})(window.location.search.substr(1).split('&'));
+
+	$(function(){
+		visualize({
+		auth: {
+			name: "jasperadmin",
+			password: "jasperadmin",
+			organization: "organization_1"
+		}
+		}, function(v) {
+		v("#first").report({
+        resource: "/public/Samples/Reports/Manheim/ProductsByID",
+		events: {beforeRender: function(el){
+			removeAllStyle(el);
+		}},
+	   error: function(err) {
+		
+            alert(err.message);
+				}
+			});
+		});
+		});
+		
+		
+		function removeAllStyle(el)
+		{
+			$(el).find(".jrcel").removeAttr("style");
+			$(el).find(".jrcolHeader").removeAttr("style");
+			$(el).find(".jrcel span").removeAttr("style");
+			$(el).find(".jrcolHeader span").removeAttr("style");
+		}
+
+	</script>
+	</head>
+	<body>
+		<div id="first" style="height:200; padding-bottom:0px"></div>
+	</body>
+</html>

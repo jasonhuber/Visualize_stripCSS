@@ -1,0 +1,70 @@
+		body {
+            font-family: tahoma;
+        }
+        .draggable{
+            width: 300px; 
+            background-color: #3498db; 
+            margin-top: 8px; 
+            padding: 12px 25px;
+            border: 1px solid #000; 
+            color: #FFFFFF;
+            border-radius: 5px;
+            
+            letter-spacing: 1px;
+            transition: all .4s;
+            -moz-transition: all .4s;
+            -webkit-transition: all .4s;
+        }
+        #left p {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        .draggable:hover {
+            background: #2980b9;
+            cursor: pointer;
+            padding-right: 5px;
+            
+        }
+		.helper{ 
+            width: 250px; 
+        }
+	
+        #mainwrapper {
+            margin-top: 40px;
+        }
+        #mainwrapper a {
+            text-decoration: none;
+            background: #3498db;
+            padding: 10px 20px;
+            color: #FFFFFF;
+            text-transform: uppercase;
+            border-radius: 4px;
+            transition: all .4s;
+            -moz-transition: all .4s;
+            -webkit-transition: all .4s;
+        }
+        
+        #mainwrapper a:hover {
+            background: #2980b9;
+            
+        }
+        .droppable {
+            background: none repeat scroll 0% 0% #3498DB;
+            color: #FFFFFF;
+            border-radius: 5px;
+            padding: 12px 10px;
+            width: 600px;
+        }
+        .redxgroup {
+            float: right;
+            background: #fff;
+            padding: 5;
+            border-radius: 50%;
+            cursor: pointer;
+            margin-top: -2px;
+        }
+
+		.dropped
+		{
+			width: 500px;
+		}

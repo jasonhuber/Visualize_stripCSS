@@ -1,19 +1,19 @@
 <html>
 	<head>
 		<script src="http://code.jquery.com/jquery-2.1.0.js"></script>
-		<script src="http://172.16.252.144:8080/jasperserver-pro601/client/visualize.js?_opt=false"></script>
+		<script src="http://qbnixjsp03.imanheim.com:8080/jasperserver-pro/client/visualize.js?_opt=false"></script>
 	<script>
 	
 	$(function(){
 		visualize({
 		auth: {
 			name: "jasperadmin",
-			password: "jasperadmin",
+			password: "jsadmin601",
 			organization: "organization_1"
 		}
 		}, function(v) {
 		v("#first").report({
-        resource: "/public/Samples/Reports/Manheim/ProductsByID_crosstab",
+        resource: "/Operational_Reports/OPR.RPT.049v1.1",
 		events: {beforeRender: function(el){
 			removeAllStyle(el);
 		}},
@@ -41,8 +41,6 @@
 			$(el).find(".jrxtrowheader span").removeAttr("style");
 			$(el).find(".jrxtdatacell").removeAttr("style");
 			$(el).find(".jrxtdatacell span").removeAttr("style");
-			
-
 			
 		}
 

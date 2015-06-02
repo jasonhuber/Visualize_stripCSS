@@ -8,7 +8,7 @@
 		visualize({
 		auth: {
 			name: "jasperadmin",
-			password: "secret",
+			password: "jsadmin601",
 			organization: "organization_1"
 		}
 		}, function(v) {
@@ -18,10 +18,39 @@
 			removeAllStyle(el);
 		}},
 	   error: function(err) {
-		
             alert(err.message);
 				}
 			});
+		//second report
+			v("#second").report({
+        resource: "/Operational_Reports/OPR.RPT.048v1.1",
+		events: {beforeRender: function(el){
+			removeAllStyle(el);
+		}},
+	   error: function(err) {
+            alert(err.message);
+				}
+			});
+//third report
+v("#third").report({
+        resource: "/Operational_Reports/OPR.RPT.049v1.1",
+		events: {beforeRender: function(el){
+			//removeAllStyle(el);
+		}},
+	   error: function(err) {
+            alert(err.message);
+				}
+			});
+		//fourth report
+			v("#fourth").report({
+        resource: "/Operational_Reports/OPR.RPT.048v1.1",
+		events: {beforeRender: function(el){
+			//removeAllStyle(el);
+		}},
+	   error: function(err) {
+            alert(err.message);
+				}
+			});		
 		});
 		});
 		
@@ -33,6 +62,8 @@
 			$(el).find(".jrcolHeader").removeAttr("style");
 			$(el).find(".jrcel span").removeAttr("style");
 			$(el).find(".jrcolHeader span").removeAttr("style");
+			$(el).find("td span").removeAttr("style");
+			$(el).find("td").removeAttr("style");
 
 			//crosstabs
 			$(el).find(".jrxtcolheader").removeAttr("style");
@@ -47,6 +78,9 @@
 	</script>
 	</head>
 	<body>
-		<div id="first" style="height:200; padding-bottom:0px"></div>
+		<div id="first" style="height:500; padding-bottom:0px"></div>
+		<div id="second" style="height:500; padding-bottom:0px"></div>
+		<div id="third" style="height:500; padding-bottom:0px"></div>
+		<div id="fourth" style="height:500; padding-bottom:0px"></div>
 	</body>
 </html>
